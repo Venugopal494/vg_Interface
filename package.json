@@ -25,7 +25,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -45,12 +47,13 @@
       "last 1 safari version"
     ]
   },
-  "description": "https://venugopal494.github.io/Portfolio/",
+  "description": "https://Venugopal494.github.io/vg_Interface",
   "main": "index.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/preset-react": "^7.26.3"
+    "@babel/preset-react": "^7.26.3",
+    "gh-pages": "^6.3.0"
   }
 }
