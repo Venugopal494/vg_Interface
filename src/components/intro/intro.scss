@@ -1,0 +1,111 @@
+@import "../../global.scss";
+
+.intro {
+  background: linear-gradient(to right, #1b3845, #203A43, #2C5364);
+  color: #EAEAEA; /* Light Text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  height: 100vh; /* Full Screen */
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left {
+    flex: 0.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .imgContainer {
+      width: 500px; /* Increased Size */
+      height: 500px;
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      transition: transform 0.5s ease-in-out, box-shadow 0.4s ease-in-out;
+
+      /* 🎨 Change shape by replacing clip-path */
+      // clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); /* Hexagon */
+      clip-path: circle(50%);  /* Uncomment for Circle */
+      // clip-path: polygon(100% 0%, 100% 100%, 100% 100%, 0% 50%);  /* Uncomment for Diamond */
+
+      // clip-path: polygon(0% 15%, 10% 0%, 90% 0%, 100% 15%, 100% 85%, 90% 100%, 10% 100%, 0% 85%);
+// 
+
+      &:hover {
+        transform: scale(1.1) rotate(5deg); /* Slight Rotation */
+        box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.4);
+        // border: 5px solid rgb(0, 0, 0); /* Glowing Border */
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .right {
+    flex: 0.5;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 50px;
+
+    @include mobile {
+      align-items: center;
+      padding-left: 0;
+      text-align: center;
+    }
+
+    .wrapper {
+      h1 {
+        font-size: 55px;
+        margin: 10px 0;
+
+        @include mobile {
+          font-size: 40px;
+        }
+      }
+
+      h2 {
+        font-size: 35px;
+      }
+
+      h3 {
+        font-size: 28px;
+        span {
+          font-size: inherit;
+          color: crimson;
+        }
+      }
+    }
+
+    a {
+      position: absolute;
+      bottom: 10px;
+      left: 40%;
+
+      img {
+        width: 35px;
+        animation: arrowBlink 2s infinite;
+      }
+
+      @keyframes arrowBlink {
+        100% {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
